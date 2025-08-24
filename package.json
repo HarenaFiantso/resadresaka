@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A project that I've supposed to finish when I started to learn how websocket works",
   "scripts": {
+    "dev": "concurrently \"npm:dev:client\" \"npm:dev:server\"",
+    "dev:client": "npm run dev --workspace=@resadresaka/client",
+    "dev:server": "npm run dev --workspace=@resadresaka/server",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky"
@@ -25,6 +28,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
     "prettier": "^3.6.2"
