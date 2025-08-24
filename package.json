@@ -1,0 +1,15 @@
+{
+  "name": "resadresaka",
+  "version": "1.0.0",
+  "description": "A project that I've supposed to finish when I started to learn how websocket works",
+  "scripts": {},
+  "workspaces": [
+    "apps/*"
+  ],
+  "keywords": [
+    "messaging",
+    "video call"
+  ],
+  "author": "Fiantso Harena",
+  "license": "MIT"
+}

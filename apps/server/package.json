@@ -1,0 +1,13 @@
+{
+  "name": "@resadresaka/server",
+  "version": "1.0.0",
+  "description": "API of the resadresaka client",
+  "scripts": {},
+  "keywords": [
+    "typescript",
+    "express"
+  ],
+  "author": "Fiantso Harena",
+  "license": "MIT",
+  "type": "module"
+}
