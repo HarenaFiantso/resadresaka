@@ -2,7 +2,10 @@
   "name": "resadresaka",
   "version": "1.0.0",
   "description": "A project that I've supposed to finish when I started to learn how websocket works",
-  "scripts": {},
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "workspaces": [
     "apps/*"
   ],
@@ -11,5 +14,8 @@
     "video call"
   ],
   "author": "Fiantso Harena",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
 }
