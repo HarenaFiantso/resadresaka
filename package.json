@@ -4,7 +4,8 @@
   "description": "A project that I've supposed to finish when I started to learn how websocket works",
   "scripts": {
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "workspaces": [
     "apps/*"
@@ -15,7 +16,17 @@
   ],
   "author": "Fiantso Harena",
   "license": "MIT",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --check"
+    ],
+    "*.{json,yml,yaml,md}": [
+      "prettier --check"
+    ]
+  },
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
     "prettier": "^3.6.2"
   }
 }

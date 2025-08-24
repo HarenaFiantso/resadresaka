@@ -5,15 +5,9 @@
     "rootDir": "./",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
+      "@/*": ["./*"]
     }
   },
-  "include": [
-    "**/*.ts"
-  ],
-  "exclude": [
-    "dist"
-  ]
+  "include": ["**/*.ts"],
+  "exclude": ["dist"]
 }

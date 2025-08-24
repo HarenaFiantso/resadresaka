@@ -1,6 +1,5 @@
 {
   "name": "@resadresaka/server",
-  "version": "1.0.0",
   "description": "API of the resadresaka client",
   "scripts": {
     "dev": "tsx --watch --env-file .env server.ts",
@@ -13,7 +12,6 @@
     "express"
   ],
   "author": "Fiantso Harena",
-  "license": "MIT",
   "type": "module",
   "dependencies": {
     "express": "^5.1.0"
