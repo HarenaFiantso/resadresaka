@@ -8,9 +8,9 @@
     "target": "ES2023",
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["src/*"]
     }
   },
   "include": ["src/**/*"],
-  "exclude": ["dist", "src/generated"]
+  "exclude": ["dist", "generated"]
 }
