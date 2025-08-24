@@ -1,13 +1,16 @@
 {
   "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./",
-    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "target": "ES2023",
+    "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["**/*.ts"],
-  "exclude": ["dist"]
+  "include": ["src/**/*"],
+  "exclude": ["dist", "src/generated"]
 }
