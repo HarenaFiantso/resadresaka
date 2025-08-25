@@ -83,4 +83,62 @@ const login = async (req: Request, res: Response) => {
   }
 };
 
-export { signup, login };
+const onboard = async (req: Request, res: Response) => {
+  try {
+    const userId = req.user?.id;
+
+    if (!userId) {
+      return res.status(401).json({ message: 'Unauthorized - User not found' });
+    }
+
+    const { fullName, bio, nativeLanguage, learningLanguage, location } = req.body;
+
+    const missingFields = [
+      !fullName && 'fullName',
+      !bio && 'bio',
+      !nativeLanguage && 'nativeLanguage',
+      !learningLanguage && 'learningLanguage',
+      !location && 'location',
+    ].filter(Boolean);
+
+    if (missingFields.length > 0) {
+      return res.status(400).json({
+        message: 'All fields are required',
+        missingFields,
+      });
+    }
+
+    const updatedUser = await prisma.user.update({
+      where: { id: userId },
+      data: {
+        fullName,
+        bio,
+        nativeLanguage,
+        learningLanguage,
+        location,
+        isOnboarded: true,
+      },
+      select: {
+        id: true,
+        email: true,
+        fullName: true,
+        profilePicUrl: true,
+        bio: true,
+        nativeLanguage: true,
+        learningLanguage: true,
+        location: true,
+        isOnboarded: true,
+      },
+    });
+
+    return res.status(200).json({
+      message: 'Onboarding completed successfully',
+      user: updatedUser,
+    });
+  } catch (error) {
+    console.error('Onboarding error:', error);
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
+export { signup, login, onboard };
